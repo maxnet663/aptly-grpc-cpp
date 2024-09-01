@@ -1,0 +1,3 @@
+aptly-grpc-cpp (0.0.1) unstable; urgency=medium
+  * Initial release.
+ -- Alexey Kopyttsev <akopyttsev@astralinux.ru>  Sun, 1 Sep 2024 00:37:31 +0100

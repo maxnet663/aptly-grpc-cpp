@@ -1,0 +1,13 @@
+Source: aptly-grpc-cpp
+Section: libs
+Priority: optional
+Maintainer: Alexey Kopyttsev <akopyttsev@astralinux.ru>
+Build-Depends: debhelper-compat (= 12), debhelper (>= 11), cmake
+Standards-Version: 0.0.1
+Homepage: https://github.com:maxnet663/aptly-grpc-cpp
+
+
+Package: aptly-grpc-cpp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Connect from cpp to aptly by grpc
