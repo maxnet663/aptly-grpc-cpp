@@ -3,11 +3,17 @@ Section: libs
 Priority: optional
 Maintainer: Alexey Kopyttsev <akopyttsev@astralinux.ru>
 Build-Depends:
-               debhelper-compat (= 12),
-               debhelper (>= 11),
-               cmake,
-               libabsl-dev,
-               ninja-build
+	debhelper-compat (= 12),
+	debhelper (>= 11),
+	cmake,
+	libabsl-dev,
+	ninja-build,
+	protobuf-compiler-grpc,
+	libgrpc-dev,
+	protobuf-compiler,
+	pkg-config,
+	libprotobuf-dev,
+ 	libgrpc++-dev
 Standards-Version: 0.0.1
 Homepage: https://github.com:maxnet663/aptly-grpc-cpp
 
