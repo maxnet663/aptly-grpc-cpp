@@ -25,9 +25,21 @@ add_custom_command(
 # Include generated *.pb.h files
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 
-set(HEADERS "src/aptly_grpc.h" ${grpc_hdrs} ${proto_hdrs})
+set(HEADERS
+        "src/repositoryClient.h"
+        "src/filesClient.h"
+        "src/aptlyClient.h"
+        ${grpc_hdrs}
+        ${proto_hdrs}
+)
 
-set(SOURCES "src/aptly_grpc.cpp" ${grpc_srcs} ${proto_srcs})
+set(SOURCES
+        "src/repositoryClient.cpp"
+        "src/filesClient.cpp"
+        "src/aptlyClient.cpp"
+        ${grpc_srcs}
+        ${proto_srcs}
+)
 
 add_library(${PROJECT_NAME} SHARED ${HEADERS} ${SOURCES})
 
@@ -40,7 +52,12 @@ install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib/static)
 install(FILES ${CMAKE_BINARY_DIR}/service.pb.h DESTINATION /usr/include/aptly)
-install(FILES ${CMAKE_SOURCE_DIR}/src/aptly_grpc.h DESTINATION /usr/include/aptly)
+install(FILES
+        ${CMAKE_SOURCE_DIR}/src/aptlyClient.h
+        ${CMAKE_SOURCE_DIR}/src/filesClient.h
+        ${CMAKE_SOURCE_DIR}/src/repositoryClient.h
+        DESTINATION
+        /usr/include/aptly)
 install(FILES ${grpc_srcs} DESTINATION /usr/include/aptly)
 install(FILES ${grpc_hdrs} DESTINATION /usr/include/aptly)
 install(FILES ${proto_srcs} DESTINATION /usr/include/aptly)

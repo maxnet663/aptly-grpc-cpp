@@ -1,4 +1,4 @@
-Source: aptly-grpc-cpp
+Source: aptly-grpc-lib
 Section: libs
 Priority: optional
 Maintainer: Alexey Kopyttsev <akopyttsev@astralinux.ru>
@@ -13,12 +13,13 @@ Build-Depends:
 	protobuf-compiler,
 	pkg-config,
 	libprotobuf-dev,
- 	libgrpc++-dev
+ 	libgrpc++-dev,
+    aptly-grpc-dev
 Standards-Version: 0.0.1
 Homepage: https://github.com:maxnet663/aptly-grpc-cpp
 
 
-Package: aptly-grpc-cpp
+Package: aptly-grpc-lib
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Connect from cpp to aptly by grpc
